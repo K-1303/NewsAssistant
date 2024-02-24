@@ -3,3 +3,4 @@ langchain
 numpy
 requests
 dotenv
+Flask-CORS
