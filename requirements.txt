@@ -1,1 +1,5 @@
 flask
+langchain
+numpy
+requests
+dotenv

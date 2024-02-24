@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News and Questions - Summarization</title>
+    <!-- Add any necessary CSS styles here -->
+</head>
+<body>
+    <div id="sidebar">
+        <h2>News URLs</h2>
+        <form action="/add_urls_summarization" method="post">
+            <label for="url1">Enter URL 1:</label><br>
+            <input type="text" id="url1" name="url1"><br>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+    
+    <div id="content">
+        <h1>Summarization</h1>
+        <p>Summarize the articles here:</p>
+        {% if summary %}
+        <div>
+            <h2>Summary:</h2>
+            <p>{{ summary }}</p>
+        </div>
+        {% endif %}
+    </div>
+    
+    <!-- Add any necessary JavaScript scripts here -->
+</body>
+</html>

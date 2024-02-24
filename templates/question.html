@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News and Questions - Question Answering</title>
+    <!-- Add any necessary CSS styles here -->
+</head>
+<body>
+    <div id="sidebar">
+        <h2>News URLs</h2>
+        <form action="/add_urls" method="post">
+            <label for="url1">Enter URL 1:</label><br>
+            <input type="text" id="url1" name="url1"><br>
+            <label for="url2">Enter URL 2:</label><br>
+            <input type="text" id="url2" name="url2"><br>
+            <!-- Add more input fields for additional URLs as needed -->
+            <input type="submit" value="Submit">
+        </form>
+        <h3>Current URLs:</h3>
+        <ul>
+            {% for url in news_urls %}
+            <li><a href="{{ url }}">{{ url }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+    
+    <div id="content">
+        <h1>Question Answering</h1>
+        <p>Ask your questions based on the articles here:</p>
+        <form action="/submit_question" method="post">
+            <label for="question">Your Question:</label><br>
+            <textarea id="question" name="question" rows="4" cols="50"></textarea><br>
+            <input type="submit" value="Submit">
+        </form>
+        {% if answer %}
+        <div>
+            <h2>Answer:</h2>
+            <p>{{ answer }}</p>
+        </div>
+        {% endif %}
+    </div>
+    
+    <!-- Add any necessary JavaScript scripts here -->
+</body>
+</html>
