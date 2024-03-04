@@ -3,3 +3,4 @@ langchain
 numpy
 requests
 unstructured
+python-magic-bin
