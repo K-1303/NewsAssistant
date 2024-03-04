@@ -2,5 +2,3 @@ flask
 langchain
 numpy
 requests
-dotenv
-Flask-CORS
