@@ -2,7 +2,7 @@ document.getElementById('sendUrlButton').addEventListener('click', function() {
     chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
         const currentUrl = tabs[0].url;
 
-        fetch('http://127.0.0.1:5000/add_urls_summarization', {
+        fetch('http://127.0.0.1:5000/summarize', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

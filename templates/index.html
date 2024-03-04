@@ -3,18 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>News and Questions - Homepage</title>
-    <!-- Add any necessary CSS styles here -->
+    <title>News and Questions - Summarization</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            padding-top: 50px;
+        }
+        .card {
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+        }
+        .card-header {
+            background-color: #007bff;
+            color: #fff;
+            border-radius: 10px 10px 0 0;
+        }
+        .form-control {
+            border-radius: 5px;
+        }
+        .btn-primary {
+            border-radius: 5px;
+        }
+        .summary {
+            background-color: #fff;
+            border-radius: 0 0 10px 10px;
+            padding: 20px;
+            margin-top: -20px;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+        }
+    </style>
 </head>
 <body>
-    <div id="content">
-        <h1>Welcome to News and Questions!</h1>
-        <p>Choose an option:</p>
-        <ul>
-            <li><a href="/question">Question Answering</a></li>
-            <li><a href="/summarization">Summarization</a></li>
-        </ul>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="mb-0">News URL</h4>
+                    </div>
+                    <div class="card-body">
+                        <form action="/summarize" method="post">
+                            <div class="form-group">
+                                <input type="text" id="url1" name="url1" class="form-control" placeholder="Enter URL" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-block">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="mb-0">Summary</h4>
+                    </div>
+                    <div class="card-body">
+                        {% if summary %}
+                        <div class="summary">
+                            <p>{{ summary }}</p>
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <!-- Add any necessary JavaScript scripts here -->
+    
+    <!-- Bootstrap JS and jQuery (optional) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
