@@ -2,3 +2,4 @@ flask
 langchain
 numpy
 requests
+unstructured
